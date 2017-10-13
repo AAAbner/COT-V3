@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\obj\COT-M_SDK.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\obj\COT-M_SDK.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Thu Oct 12 17:11:27 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Fri Oct 13 18:29:26 2017
 <BR><P>
 <H3>Maximum Stack Usage =       5432 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1500,9 +1500,9 @@ Global Symbols
 <P><STRONG><a name="[85]"></a>get_radio_channel_power()</STRONG> (Thumb, 66 bytes, Stack size 16 bytes, cot_mac.o(i._Z23get_radio_channel_powerv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = get_radio_channel_power() &rArr; osal_mutex_take &rArr; osal_mutex_create &rArr; osal_mem_alloc
 </UL>
-<BR>[Calls]<UL><LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osal_mutex_take
+<BR>[Calls]<UL><LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait_ms
+<LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osal_mutex_take
 <LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osal_mutex_release
-<LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait_ms
 <LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1280::SetRx(TickTime_s)
 <LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1280::GetRssiInst()
 <LI><a href="#[157]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1280::SetStandby(RadioStandbyModes_t)
@@ -2128,8 +2128,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SX1280Hal::Reset() &rArr; SX1280Hal::HalInit() &rArr; write
 </UL>
 <BR>[Calls]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write
-<LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lseek
 <LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait_ms
+<LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lseek
 <LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1280Hal::HalInit()
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> sx1280-hal.o(.constdata__ZTV9SX1280Hal)
@@ -2986,9 +2986,9 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;am_hal_flash_delay
 <LI><a href="#[1eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;am_hal_clkgen_sysclk_get
 </UL>
-<BR>[Called By]<UL><LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cot_mt_oled_init
+<BR>[Called By]<UL><LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait_ms
+<LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cot_mt_oled_init
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_register_init
-<LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait_ms
 </UL>
 
 <P><STRONG><a name="[107]"></a>am_util_delay_us</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, am_util_delay.o(i.am_util_delay_us))
@@ -4143,11 +4143,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[251]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osalInitTasks
 </UL>
 
-<P><STRONG><a name="[8f]"></a>sample_app_processevent</STRONG> (Thumb, 1700 bytes, Stack size 376 bytes, sample_multiple_anchor_app.o(i.sample_app_processevent))
+<P><STRONG><a name="[8f]"></a>sample_app_processevent</STRONG> (Thumb, 2032 bytes, Stack size 376 bytes, sample_multiple_anchor_app.o(i.sample_app_processevent))
 <BR><BR>[Stack]<UL><LI>Max Depth = 1096 + Unknown Stack Size
 <LI>Call Chain = sample_app_processevent &rArr; cot_ranging &rArr; CheckDistance(ModulationParams_t*) &rArr; std::pow(double, int) &rArr; __hardfp_pow &rArr; sqrt &rArr; _dsqrt &rArr; __fpl_dnaninf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[196]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osal_start_timerEx
+<BR>[Calls]<UL><LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait_ms
+<LI><a href="#[196]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osal_start_timerEx
 <LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osal_set_event
 <LI><a href="#[264]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osal_pwrmgr_task_state
 <LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osal_msg_send
@@ -4239,7 +4240,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;am_util_delay_ms
 </UL>
-<BR>[Called By]<UL><LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;phy_layer_init(unsigned char)
+<BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sample_app_processevent
+<LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;phy_layer_init(unsigned char)
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_radio_channel_power()
 <LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1280Hal::Reset()
 </UL>

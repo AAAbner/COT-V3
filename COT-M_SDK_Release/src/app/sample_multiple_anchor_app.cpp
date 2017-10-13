@@ -239,36 +239,7 @@ void master_broadcast_data()																							//½Úµã¹ã²¥Êı¾İ
 	
 	//memcpy(&s_cot_sample_msg_tx->data[2],temp,64);
 	s_cot_sample_msg_tx->data_len = 2;
-//	#if 0
-//		uint32_t dev_id = get_dev_id();
-//		uint8_t index = 0;
-//		uint8_t send_buf[64];
-//		
-//		s_cot_sample_msg_tx.cot_phy_payload.src_dev_id[0] = (dev_id&0xFF000000) >> 24;
-//		s_cot_sample_msg_tx.cot_phy_payload.src_dev_id[1] = (dev_id&0xFF0000) >> 16;
-//		s_cot_sample_msg_tx.cot_phy_payload.src_dev_id[2] = (dev_id&0xFF00) >> 8;
-//		s_cot_sample_msg_tx.cot_phy_payload.src_dev_id[3] = dev_id&0xFF;
-//		index += 4;
-//		
-//		s_cot_sample_msg_tx.cot_phy_payload.dst_dev_id[0] = 0xFF;
-//		s_cot_sample_msg_tx.cot_phy_payload.dst_dev_id[1] = 0xFF;
-//		s_cot_sample_msg_tx.cot_phy_payload.dst_dev_id[2] = 0xFF;
-//		s_cot_sample_msg_tx.cot_phy_payload.dst_dev_id[3] = 0xFF;
-//		index += 4;
-//		
-//		s_cot_sample_msg_tx.cot_phy_payload.commad_h = 0x00;
-//		s_cot_sample_msg_tx.cot_phy_payload.commad_l = 0x02;
-//		index += 2;
-//		
-//		//memset(send_buf,0x55,sizeof(send_buf));
-//		//memcpy(s_cot_sample_msg_tx.cot_phy_payload.data,send_buf,64);
-//		//index += 64;
-//		
-//		memcpy(s_cot_sample_msg_tx.cot_phy_payload.data,"ping\0",4);
-//		index += 4;
-//		
-//		s_cot_sample_msg_tx.cot_phy_payload_len = index;
-//	#endif
+
 }
 
 void slave_broadcast_data(uint32_t device_id)						//Ãªµã»Ø¸´¹ã²¥Êı¾İ
@@ -286,7 +257,7 @@ void slave_broadcast_data(uint32_t device_id)						//Ãªµã»Ø¸´¹ã²¥Êı¾İ
 }
 void master_handshake_data(uint8_t count)									//½Úµã´¦ÀíÎÕÊÖÊı¾İ£¿
 {
-	log_printf("\n%x\n",g_device_id[count].device_id);
+	log_printf("\n%x\n",g_device_id[count].device_id);			//´òÓ¡ÃªµãID
 	s_cot_sample_msg_tx->dst_addr = g_device_id[count].device_id;
 	s_cot_sample_msg_tx->data = (uint8_t*)(s_cot_sample_msg_tx + 1);
 	s_cot_sample_msg_tx->data[0] = 0x00;
@@ -334,11 +305,6 @@ void slave_handdisance_data(uint32_t device_id)										  //Ãªµã´¦ÀíÊı¾İÖ¡
 
 	
 }
-
-
-
-
-
 
 /**
 * @name: sample_app_init
@@ -414,7 +380,7 @@ static void cot_sample_msg_handle( cot_mac_msg_t *sample_msg_packet )						//ÏûÏ
 								
 								uint32_t dev_id = s_config_data.RFParamSettings.cot_dev_id;//get_dev_id();
 								srand(dev_id);
-								int16_t delayms = rand()%10;
+								int16_t delayms = rand()%10;								
 								slave_broadcast_data(sample_msg_packet->src_addr);							//Ô´ID£¬Õâ¸ö²ÎÊı£¨ÊÇ¹ã²¥½ÚµãµÄID£©
 								osal_start_timerEx(s_sample_app_id,SMAPLE_MSG_TX_EVENT,delayms*2);   //Ëæ»úÊ±ÑÓÖ®ºó½øÈë  ÏûÏ¢·¢ËÍÊÂ¼ş
 								log_printf("delayms = %d\n",delayms*2);
@@ -436,7 +402,6 @@ static void cot_sample_msg_handle( cot_mac_msg_t *sample_msg_packet )						//ÏûÏ
                             
             }
             break;
-						
 						case SMAPLE_APP_CMD_DISTANCE_DATA:						//Èç¹ûÊÇÊı¾İÖ¡ 0x40£¬ ×Ô¼º¼Ó
 						{
 							#ifdef MASTER_ROLE			//½ÚµãÊÕµ½µÄÃªµã»Ø¸´µÄÊı¾İÖ¡
@@ -444,21 +409,14 @@ static void cot_sample_msg_handle( cot_mac_msg_t *sample_msg_packet )						//ÏûÏ
 								//osal_set_event(s_sample_app_id,SMAPLE_MSG_START_RNG_EVENT);			//½Úµã½øÈë
 								//osal_start_timerEx(s_sample_app_id,SMAPLE_MSG_START_RNG_EVENT,7);
 							#else										//ÃªµãÊÕµ½Êı¾İÖ¡									
-								
 								//g_start_rng_flag_slave = true;
-								//slave_handshake_data(sample_msg_packet->src_addr);
-							
-
-							
+								//slave_handshake_data(sample_msg_packet->src_addr);			
 								//uint8_t data_buff[128];
 								//memset(data_buff, 0x0, sizeof(data_buff) );
 								//							
 								//sample_msg->data[0];						//¾ßÌå´òÓ¡¸ñÊ½¿ÉÒÔ²Î¿¼800¶àĞĞµÄµØ·½£¬sprintf×Ö·û´®¸ñÊ½»¯ÃüÁî
-								//sample_msg->data[1];
-								//sample_msg->data[2];
 							  log_printf("%d %d %d\n",sample_msg->data[0],sample_msg->data[1],sample_msg->data[2]);       //´®¿Ú´òÓ¡¾àÀëÖµºÍrssiÖµ
-							
-								osal_set_event(s_sample_app_id,SMAPLE_MSG_RX_EVENT);					//Ãªµã½øÈë·¢ËÍÊÂ¼ş£¬·¢ËÍ»Ø¸´Êı¾İÖ¡£¿
+								osal_set_event(s_sample_app_id,SMAPLE_MSG_START_DATA_EVENT);					//Ãªµã½øÈë·¢ËÍÊÂ¼ş£¬·¢ËÍ»Ø¸´Êı¾İÖ¡£¿
 							#endif							
 						}
 						break;
@@ -486,7 +444,7 @@ static void phy_button_process_osal_msg( mt_osal_msg_data_t *p_msg )
 			g_pkg_type = UNCONFIRM;
 			memset(g_device_id,0x0,sizeof(g_device_id)/sizeof(BroadCast_Data));
 			master_broadcast_data();						//°´¼üÒ»ÏÂ ±íÊ¾  ·¢ËÍ¹ã²¥Ö¡
-			osal_start_timerEx(get_sample_task_id(),SMAPLE_MSG_MASTER_DECE_TIMER_EVENT,1000);
+			osal_start_timerEx(get_sample_task_id(),SMAPLE_MSG_MASTER_DECE_TIMER_EVENT,1000);				//1Ãëºó½øÈë  Ê±¼ä´°¿ÚÊÂ¼ş
 			osal_set_event(get_sample_task_id(), SMAPLE_MSG_CONFIG_EVENT | SMAPLE_MSG_TX_EVENT);		//½øÈë·¢ËÍÊÂ¼ş
 			#endif
         }
@@ -635,11 +593,10 @@ uint16_t sample_app_processevent(uint8_t task_id, uint16_t events)							//Õâ¸ö¹
 		}
 		return (events ^ SMAPLE_MSG_MASTER_DECE_TIMER_EVENT);
 	}
-	
-	
-	
+
 	if ( events & SMAPLE_MSG_HANDSHAKE_EVENT )													//ĞÂÔöµÄÎÕÊÖÊÂ¼ş
 	{
+		log_printf(" -> SMAPLE_MSG_HANDSHAKE_EVENT");
 		master_handshake_data(g_start_rng_count);								//½Úµã´¦ÀíÎÕÊÖÊı¾İ£¨Í¨ÖªÃªµã¿ªÊ¼²â¾à£©
 		g_pkg_type = CONFIRM;
 		g_start_rng_flag = true;
@@ -650,6 +607,7 @@ uint16_t sample_app_processevent(uint8_t task_id, uint16_t events)							//Õâ¸ö¹
 	
 	if( events & SMAPLE_MSG_HANDDATA_EVENT )												//×Ô¼ºĞÂÔöµÄÊı¾İÊÂ¼ş£¿£¿
 	{
+		log_printf(" -> SMAPLE_MSG_HANDDATA_EVENT");
 		master_handdisance_data(g_start_data_count);						//½Úµã´¦ÀíÊı¾İÖ¡£¨·¢ËÍÊı¾İÖ¡¸øÃªµã£©
 		g_pkg_type = CONFIRM;
 		g_start_data_flag = true;
@@ -769,7 +727,7 @@ uint16_t sample_app_processevent(uint8_t task_id, uint16_t events)							//Õâ¸ö¹
 	
 	if ( events & SMAPLE_MSG_START_RNG_EVENT )							//¿ªÊ¼²â¾àÊÂ¼ş
 	{
-
+		
 		s_config_data.RFParamSettings.ModulationType = RF_PACKET_TYPE_RANGING;
 		s_config_data.RFParamSettings.ModulationParam1 = RF_LORA_SF6;
 		s_config_data.RFParamSettings.ModulationParam2 = RF_LORA_BW_1600;
@@ -831,62 +789,34 @@ log_printf("start rng\n");
 				
 				
 									if(g_start_rng_count < MASTER_RNG_DEVICE_COUNT)								//Èç¹û¿ªÊ¼²â¾à±êÖ¾Î»<3£¬±íÃ÷ËùÓĞ²â¾à»¹Ã»Íê³É
-										osal_set_event(task_id,SMAPLE_MSG_HANDSHAKE_EVENT);					//¼ÌĞø½øÈëÎÕÊÖÊÂ¼ş
-									else												//Èç¹û¿ªÊ¼²â¾à±êÖ¾Î»>=3,´ú±íºÍÈı¸öÃªµã¶¼½øĞĞÁË²â¾à¡£¾Í¹»ÁË£¡
-									{
+											osal_set_event(task_id,SMAPLE_MSG_HANDDATA_EVENT);				//½øÈë´¦ÀíÊı¾İÖ¡ÊÂ¼ş
+									
+//										osal_set_event(task_id,SMAPLE_MSG_HANDSHAKE_EVENT);					
+//									else												//Èç¹û¿ªÊ¼²â¾à±êÖ¾Î»>=3,´ú±íºÍÈı¸öÃªµã¶¼½øĞĞÁË²â¾à¡£¾Í¹»ÁË£¡
+//									{
+//										//ÕâÀïĞèÒª²åÈëÒ»¸öÊÂ¼ş£¬ÓÃÓÚ²â¾àÍê³ÉÖ®ºóµÄÊÂ¼ş£¬·¢ËÍÊı¾İÖ¡¸øÃ¿¸öÃªµã
 
-										
-										//ÕâÀïĞèÒª²åÈëÒ»¸öÊÂ¼ş£¬ÓÃÓÚ²â¾àÍê³ÉÖ®ºóµÄÊÂ¼ş£¬·¢ËÍÊı¾İÖ¡¸øÃ¿¸öÃªµã
-						
-										osal_set_event(task_id, SMAPLE_MSG_HANDDATA_EVENT);
-
-										
-//										wait_ms(2000);
-//										g_pkg_type = UNCONFIRM;
-//										g_start_rng_count = 0;
-//										g_device_id_count = 0;
-//										memset(g_device_id,0x0,sizeof(g_device_id)/sizeof(BroadCast_Data));
-
-//										master_broadcast_data();						//µÚ¶şÂÖ·¢ËÍ¹ã²¥Ö¡
-//										g_flag_send_frist = true;
-//										osal_set_event(get_sample_task_id(), SMAPLE_MSG_CONFIG_EVENT | SMAPLE_MSG_TX_EVENT);
-										
-									}
 						 }
 						else				//Èç¹û»Ø¸´µÄÃªµãÊıÁ¿<=3
 						{
 							if(g_start_rng_count < g_device_id_count)					//Èç¹û¿ªÊ¼²â¾à±êÖ¾Î»< »Ø¸´µÄÃªµãÊıÁ¿ £¬ 
-								osal_set_event(task_id,SMAPLE_MSG_HANDSHAKE_EVENT);//¼ÌĞø½øÈëÎÕÊÖÊÂ¼ş
-							else													//Èç¹û¿ªÊ¼²â¾à±êÖ¾Î»>=»Ø¸´µÄÃªµãÊıÁ¿,´ú±íºÍËùÓĞ»Ø¸´Ãªµã¶¼½øĞĞÁË²â¾à¡£¾Í¹»ÁË£¡
-							{
-
-//								wait_ms(2000);
-//								g_pkg_type = UNCONFIRM;
-//								g_start_rng_count = 0;
-//								g_device_id_count = 0;
-//								memset(g_device_id,0x0,sizeof(g_device_id)/sizeof(BroadCast_Data));
-//								master_broadcast_data();
-//								g_flag_send_frist = true;
-//								osal_set_event(get_sample_task_id(), SMAPLE_MSG_CONFIG_EVENT | SMAPLE_MSG_TX_EVENT);
-								
-									osal_set_event(task_id, SMAPLE_MSG_HANDDATA_EVENT);
-								
-							}
+								osal_set_event(task_id,SMAPLE_MSG_HANDDATA_EVENT);//¼ÌĞø½øÈëÎÕÊÖÊÂ¼ş
+//							else													//Èç¹û¿ªÊ¼²â¾à±êÖ¾Î»>=»Ø¸´µÄÃªµãÊıÁ¿,´ú±íºÍËùÓĞ»Ø¸´Ãªµã¶¼½øĞĞÁË²â¾à¡£¾Í¹»ÁË£¡
 						}
         }
 				
         else					//Èç¹ûÊÇÃªµãµÄ»°
         {
-            uint8_t printf_buff[128];
-            uint8_t index = 0;
+//            uint8_t printf_buff[128];
+//            uint8_t index = 0;
 
-            memset(printf_buff, 0x0, sizeof(printf_buff) );
-            sprintf( (char *)printf_buff+index, "cnt_pkg_rx_ok=: %d",cot_ranging_res.cnt_packet_rx_ok );			//cnt_packet_rx_okÉ¶ÒâË¼£¿£¿
-            log_printf("%s\n",printf_buff);
+//            memset(printf_buff, 0x0, sizeof(printf_buff) );
+//            sprintf( (char *)printf_buff+index, "cnt_pkg_rx_ok=: %d",cot_ranging_res.cnt_packet_rx_ok );			//cnt_packet_rx_okÉ¶ÒâË¼£¿£¿
+//            log_printf("%s\n",printf_buff);
 						osal_set_event(task_id,SMAPLE_MSG_CONFIG_EVENT);					//½øÈëÏûÏ¢ÅäÖÃÊÂ¼ş
+						osal_set_event(task_id,SMAPLE_MSG_RX_EVENT);					//½øÈë½ÓÊÕÊÂ¼ş
         }
-
-
+				
 //		osal_set_event(task_id,SMAPLE_MSG_RNG_EVENT);					//½øÈëÏÂÒ»¸öÊ¹ÄÜ²â¾àÊÂ¼ş
 		return (events ^ SMAPLE_MSG_START_RNG_EVENT);
 	}
@@ -895,10 +825,75 @@ log_printf("start rng\n");
 	
 	if( events & SMAPLE_MSG_START_DATA_EVENT )											//×Ô¼ºĞÂÔöµÄ¿ªÊ¼Êı¾İÖ¡ÊÂ¼ş
     {
-		
+				
+				s_config_data.RFParamSettings.ModulationType = RF_PACKET_TYPE_LORA;
+				s_config_data.RFParamSettings.ModulationParam1 = RF_LORA_SF6;
+				s_config_data.RFParamSettings.ModulationParam2 = RF_LORA_BW_1600;
+				s_config_data.RFParamSettings.ModulationParam3 = RF_LORA_CR_4_5;
 
+				s_config_data.RFParamSettings.PacketParam1 = 12 ; // PreambleLength
+				s_config_data.RFParamSettings.PacketParam2 = RF_LORA_PACKET_VARIABLE_LENGTH;
+				s_config_data.RFParamSettings.PacketParam3 = DEMO_GFS_LORA_MAX_PAYLOAD;
+				s_config_data.RFParamSettings.PacketParam4 = RF_LORA_CRC_ON;
+				s_config_data.RFParamSettings.PacketParam5 = RF_LORA_IQ_NORMAL;
+log_printf("start data\n");
+				PHYParamSettings_t phy_param_setting ;
+        sample_rf_param_get(s_config_data, &phy_param_setting);
+			
+				#ifdef MASTER_ROLE
+        phy_param_setting.Entity = RF_MASTER;
+        #endif
 
+        #ifdef SLAVE_ROLE
+        phy_param_setting.Entity = RF_SLAVE;
+        #endif
+				
+				g_start_data_flag = false;
+			
+				if( phy_param_setting.Entity == RF_MASTER )				//Èç¹ûÊÇÖ÷»úµÄ»°
+        {
+						g_start_data_count++;
+						if(g_device_id_count > MASTER_RNG_DEVICE_COUNT)									//Èç¹û»Ø¸´µÄÃªµãÊıÁ¿>3   ÆäÖĞMASTER_RNG_DEVICE_COUNT = 3
+						{
+								if(g_start_data_count < MASTER_RNG_DEVICE_COUNT)								//Èç¹û¿ªÊ¼Êı¾İ±êÖ¾Î»<3£¬±íÃ÷ËùÓĞÊı¾İÖ¡´«Êä»¹Ã»Íê³É
+										osal_set_event(task_id,SMAPLE_MSG_HANDSHAKE_EVENT);					//¼ÌĞø½øÈëÎÕÊÖÊÂ¼ş
+									else												//Èç¹û¿ªÊ¼Êı¾İ±êÖ¾Î»>=3,´ú±íºÍÈı¸öÃªµã¶¼½øĞĞÁËÊı¾İ´«Êä¡£¾Í¹»ÁË£¡
+									{
+										//ÕâÀïĞèÒª²åÈëÒ»¸öÊÂ¼ş£¬ÓÃÓÚ²â¾àÍê³ÉÖ®ºóµÄÊÂ¼ş£¬·¢ËÍÊı¾İÖ¡¸øÃ¿¸öÃªµã
+											wait_ms(2000);
+											g_pkg_type = UNCONFIRM;
+											g_start_data_count = 0;
+											g_start_rng_count = 0;
+											g_device_id_count = 0;
+											memset(g_device_id,0x0,sizeof(g_device_id)/sizeof(BroadCast_Data));
+											master_broadcast_data();						//µÚ¶şÂÖ·¢ËÍ¹ã²¥Ö¡
+											g_flag_send_frist = true;
+											osal_set_event(get_sample_task_id(), SMAPLE_MSG_CONFIG_EVENT | SMAPLE_MSG_TX_EVENT);
+									}
+						}
+						else				//Èç¹û»Ø¸´µÄÃªµãÊıÁ¿<=3
+						{
+							if(g_start_data_count < g_device_id_count)						//Èç¹û¿ªÊ¼Êı¾İ±êÖ¾Î»<3£¬±íÃ÷ËùÓĞÊı¾İÖ¡´«Êä»¹Ã»Íê³É
+									osal_set_event(task_id,SMAPLE_MSG_HANDSHAKE_EVENT);//¼ÌĞø½øÈëÎÕÊÖÊÂ¼ş
+							else													//Èç¹û¿ªÊ¼Êı¾İ±êÖ¾Î»>=3,´ú±íºÍÈı¸öÃªµã¶¼½øĞĞÁËÊı¾İ´«Êä¡£¾Í¹»ÁË£¡
+							{
 
+										wait_ms(2000);
+										g_pkg_type = UNCONFIRM;
+										g_start_rng_count = 0;
+										g_start_data_count = 0;
+										g_device_id_count = 0;
+										memset(g_device_id,0x0,sizeof(g_device_id)/sizeof(BroadCast_Data));
+										master_broadcast_data();
+										g_flag_send_frist = true;
+										osal_set_event(get_sample_task_id(), SMAPLE_MSG_CONFIG_EVENT | SMAPLE_MSG_TX_EVENT);
+							}
+						}
+        }
+				else					//Èç¹ûÊÇÃªµãµÄ»°
+        {
+					osal_set_event(task_id,SMAPLE_MSG_CONFIG_EVENT);					//½øÈëÏûÏ¢ÅäÖÃÊÂ¼ş
+        }
         return (events ^ SMAPLE_MSG_START_DATA_EVENT);
     }
 
@@ -955,22 +950,39 @@ log_printf("start rng\n");
 				log_printf("SMAPLE_MSG_TX_DONE_EVENT\n");
 				#ifdef MASTER_ROLE
 					if(g_start_rng_flag)//Æô¶¯²â¾à±êÖ¾
+					{	
+						log_printf("g_start_rng_flag = true\n");
 						osal_set_event(task_id,SMAPLE_MSG_START_RNG_EVENT);
-					else
-						osal_set_event(task_id,SMAPLE_MSG_RX_EVENT);
-					
-					/////////////////////////////////////////////////×Ô¼º¼ÓµÄ
-					if(g_start_data_flag)//Æô¶¯Êı¾İ±êÖ¾
+						
+					}
+//					else
+//					{
+//						log_printf("g_start_rng_flag = false\n");
+//						osal_set_event(task_id,SMAPLE_MSG_RX_EVENT);
+//					}
+					/////////////////////////////////////////////////×Ô¼º¼ÓµÄ,ÕâÀïµÄif else Ó¦¸ÃÒª·Åµ½ÉÏÃæÄÇ¸öif elseÖĞÈ¥
+					else if(g_start_data_flag)//Æô¶¯Êı¾İ±êÖ¾
+					{
+						log_printf("g_start_data_flag = true\n");
 						osal_set_event(task_id,SMAPLE_MSG_START_DATA_EVENT);
-					else
-						osal_set_event(task_id,SMAPLE_MSG_RX_EVENT);
-					
+					}
+//					else								//ÕâÒ»¶ÎÒÆµ½×îÏÂÃæ£¿£¿
+//					{
+//						log_printf("g_start_data_flag = false\n");
+//						osal_set_event(task_id,SMAPLE_MSG_RX_EVENT);
+//					}
 
-					if(g_flag_send_frist)//ĞÂÒ»ÂÖ¿ªÊ¼±êÖ¾
+				  else if(g_flag_send_frist)//ĞÂÒ»ÂÖ¿ªÊ¼±êÖ¾
 					{
 						g_flag_send_frist = false;
 						
 						osal_start_timerEx(get_sample_task_id(),SMAPLE_MSG_MASTER_DECE_TIMER_EVENT,1000);
+					}
+					
+					else
+					{
+						log_printf("g_start_data_flag = false\n");
+						osal_set_event(task_id,SMAPLE_MSG_RX_EVENT);
 					}
 				#else
 					//if(g_start_rng_flag_slave)

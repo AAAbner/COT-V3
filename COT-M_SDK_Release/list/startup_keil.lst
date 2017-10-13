@@ -430,12 +430,12 @@ ARM Macro Assembler    Page 7
               00000200 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
-erwork --depend=.\obj\startup_keil.d -o.\obj\startup_keil.o -I"F:\Lora资料\sx12
-80\COT-MOV淘宝板子资料\COT-M_SDK_Release_V3最新版本 -10.11\COT-M_SDK_Release_V2
-\RTE" -ID:\Keil_v5\ARM\PACK\AmbiqMicro\Apollo_DFP\0.9.2 -ID:\Keil_v5\ARM\CMSIS\
-Include -ID:\Keil_v5\ARM\PACK\AmbiqMicro\Apollo_DFP\0.9.2\Device\Include --pred
-efine="__UVISION_VERSION SETA 514" --predefine="APOLLO_512 SETA 1" --list=.\lis
-t\startup_keil.lst src\driver\startup\startup_keil.s
+erwork --depend=.\obj\startup_keil.d -o.\obj\startup_keil.o -IF:\Lora资料\sx128
+0\COT-MOV淘宝板子资料\COT-M-V3\COT-M_SDK_Release\RTE -ID:\Keil_v5\ARM\PACK\Ambi
+qMicro\Apollo_DFP\0.9.2 -ID:\Keil_v5\ARM\CMSIS\Include -ID:\Keil_v5\ARM\PACK\Am
+biqMicro\Apollo_DFP\0.9.2\Device\Include --predefine="__UVISION_VERSION SETA 51
+4" --predefine="APOLLO_512 SETA 1" --list=.\list\startup_keil.lst src\driver\st
+artup\startup_keil.s
 
 
 

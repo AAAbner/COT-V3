@@ -108,6 +108,7 @@ Section Cross References
     sample_multiple_anchor_app.o(i.sample_app_processevent) refers to strlen.o(.text) for strlen
     sample_multiple_anchor_app.o(i.sample_app_processevent) refers to sample_multiple_anchor_app.o(.data) for g_device_id_count
     sample_multiple_anchor_app.o(i.sample_app_processevent) refers to sample_multiple_anchor_app.o(.bss) for g_device_id
+    sample_multiple_anchor_app.o(i.sample_app_processevent) refers to hal_timers.o(i.wait_ms) for wait_ms
     sample_multiple_anchor_app.o(.ARM.exidx) refers to sample_multiple_anchor_app.o(i._Z21master_broadcast_datav) for i._Z21master_broadcast_datav
     sample_multiple_anchor_app.o(.ARM.exidx) refers to sample_multiple_anchor_app.o(i._Z20slave_broadcast_dataj) for i._Z20slave_broadcast_dataj
     sample_multiple_anchor_app.o(.ARM.exidx) refers to sample_multiple_anchor_app.o(i._Z21master_handshake_datah) for i._Z21master_handshake_datah
@@ -4195,141 +4196,141 @@ Image Symbol Table
     i.rtc_init_module                        0x00012020   Section        0  rtc.o(i.rtc_init_module)
     i.sample_app_init                        0x0001202c   Section        0  sample_multiple_anchor_app.o(i.sample_app_init)
     i.sample_app_processevent                0x00012044   Section        0  sample_multiple_anchor_app.o(i.sample_app_processevent)
-    i.simple_strlen                          0x00012794   Section        0  am_util_stdio.o(i.simple_strlen)
-    simple_strlen                            0x00012795   Thumb Code    24  am_util_stdio.o(i.simple_strlen)
-    i.spi1_disable                           0x000127ac   Section        0  spi1.o(i.spi1_disable)
-    spi1_disable                             0x000127ad   Thumb Code    12  spi1.o(i.spi1_disable)
-    i.spi1_init_module                       0x000127bc   Section        0  spi1.o(i.spi1_init_module)
-    i.spi_disable                            0x000127c8   Section        0  spi.o(i.spi_disable)
-    spi_disable                              0x000127c9   Thumb Code   128  spi.o(i.spi_disable)
-    i.spi_init_module                        0x00012854   Section        0  spi.o(i.spi_init_module)
-    i.sqrt                                   0x0001285e   Section        0  sqrt.o(i.sqrt)
-    i.timerA0_start                          0x000128cc   Section        0  hal_timers.o(i.timerA0_start)
-    i.timerA0_stop                           0x00012918   Section        0  hal_timers.o(i.timerA0_stop)
-    i.uart_disable                           0x00012938   Section        0  uart.o(i.uart_disable)
-    uart_disable                             0x00012939   Thumb Code   110  uart.o(i.uart_disable)
-    i.uart_enable                            0x000129ac   Section        0  uart.o(i.uart_enable)
-    uart_enable                              0x000129ad   Thumb Code   140  uart.o(i.uart_enable)
-    i.uart_init_module                       0x00012a40   Section        0  uart.o(i.uart_init_module)
-    i.uint64_to_hexstr                       0x00012a4a   Section        0  am_util_stdio.o(i.uint64_to_hexstr)
-    uint64_to_hexstr                         0x00012a4b   Thumb Code   138  am_util_stdio.o(i.uint64_to_hexstr)
-    i.uint64_to_str                          0x00012ad4   Section        0  am_util_stdio.o(i.uint64_to_str)
-    uint64_to_str                            0x00012ad5   Thumb Code   112  am_util_stdio.o(i.uint64_to_str)
-    i.wait_ms                                0x00012b44   Section        0  hal_timers.o(i.wait_ms)
-    i.wait_us                                0x00012b56   Section        0  hal_timers.o(i.wait_us)
-    i.write                                  0x00012b68   Section        0  vfs.o(i.write)
-    locale$$code                             0x00012b9c   Section       44  lc_numeric_c.o(locale$$code)
-    x$fpl$basic                              0x00012bc8   Section       24  basic.o(x$fpl$basic)
-    $v0                                      0x00012bc8   Number         0  basic.o(x$fpl$basic)
-    x$fpl$d2f                                0x00012be0   Section       98  d2f.o(x$fpl$d2f)
-    $v0                                      0x00012be0   Number         0  d2f.o(x$fpl$d2f)
-    x$fpl$dadd                               0x00012c44   Section      336  daddsub_clz.o(x$fpl$dadd)
-    $v0                                      0x00012c44   Number         0  daddsub_clz.o(x$fpl$dadd)
-    _dadd1                                   0x00012c55   Thumb Code     0  daddsub_clz.o(x$fpl$dadd)
-    x$fpl$dcheck1                            0x00012d94   Section       16  dcheck1.o(x$fpl$dcheck1)
-    $v0                                      0x00012d94   Number         0  dcheck1.o(x$fpl$dcheck1)
-    x$fpl$dcmpinf                            0x00012da4   Section       24  dcmpi.o(x$fpl$dcmpinf)
-    $v0                                      0x00012da4   Number         0  dcmpi.o(x$fpl$dcmpinf)
-    x$fpl$ddiv                               0x00012dbc   Section      688  ddiv.o(x$fpl$ddiv)
-    $v0                                      0x00012dbc   Number         0  ddiv.o(x$fpl$ddiv)
-    ddiv_entry                               0x00012dc3   Thumb Code     0  ddiv.o(x$fpl$ddiv)
-    x$fpl$dfix                               0x0001306c   Section       94  dfix.o(x$fpl$dfix)
-    $v0                                      0x0001306c   Number         0  dfix.o(x$fpl$dfix)
-    x$fpl$dfixu                              0x000130cc   Section       90  dfixu.o(x$fpl$dfixu)
-    $v0                                      0x000130cc   Number         0  dfixu.o(x$fpl$dfixu)
-    x$fpl$dflt                               0x00013126   Section       46  dflt_clz.o(x$fpl$dflt)
-    $v0                                      0x00013126   Number         0  dflt_clz.o(x$fpl$dflt)
-    x$fpl$dfltu                              0x00013154   Section       38  dflt_clz.o(x$fpl$dfltu)
-    $v0                                      0x00013154   Number         0  dflt_clz.o(x$fpl$dfltu)
-    x$fpl$dleqf                              0x0001317c   Section      120  dleqf.o(x$fpl$dleqf)
-    $v0                                      0x0001317c   Number         0  dleqf.o(x$fpl$dleqf)
-    x$fpl$dmul                               0x000131f4   Section      340  dmul.o(x$fpl$dmul)
-    $v0                                      0x000131f4   Number         0  dmul.o(x$fpl$dmul)
-    x$fpl$dnaninf                            0x00013348   Section      156  dnaninf.o(x$fpl$dnaninf)
-    $v0                                      0x00013348   Number         0  dnaninf.o(x$fpl$dnaninf)
-    x$fpl$dretinf                            0x000133e4   Section       12  dretinf.o(x$fpl$dretinf)
-    $v0                                      0x000133e4   Number         0  dretinf.o(x$fpl$dretinf)
-    x$fpl$drleqf                             0x000133f0   Section      108  drleqf.o(x$fpl$drleqf)
-    $v0                                      0x000133f0   Number         0  drleqf.o(x$fpl$drleqf)
-    x$fpl$drsb                               0x0001345c   Section       22  daddsub_clz.o(x$fpl$drsb)
-    $v0                                      0x0001345c   Number         0  daddsub_clz.o(x$fpl$drsb)
-    x$fpl$dsqrt                              0x00013474   Section      408  dsqrt_umaal.o(x$fpl$dsqrt)
-    $v0                                      0x00013474   Number         0  dsqrt_umaal.o(x$fpl$dsqrt)
-    x$fpl$dsub                               0x0001360c   Section      468  daddsub_clz.o(x$fpl$dsub)
-    $v0                                      0x0001360c   Number         0  daddsub_clz.o(x$fpl$dsub)
-    _dsub1                                   0x0001361d   Thumb Code     0  daddsub_clz.o(x$fpl$dsub)
-    x$fpl$fpinit                             0x000137e0   Section       10  fpinit.o(x$fpl$fpinit)
-    $v0                                      0x000137e0   Number         0  fpinit.o(x$fpl$fpinit)
-    x$fpl$fretinf                            0x000137ea   Section       10  fretinf.o(x$fpl$fretinf)
-    $v0                                      0x000137ea   Number         0  fretinf.o(x$fpl$fretinf)
-    x$fpl$printf1                            0x000137f4   Section        4  printf1.o(x$fpl$printf1)
-    $v0                                      0x000137f4   Number         0  printf1.o(x$fpl$printf1)
-    x$fpl$retnan                             0x000137f8   Section      100  retnan.o(x$fpl$retnan)
-    $v0                                      0x000137f8   Number         0  retnan.o(x$fpl$retnan)
-    x$fpl$scalbn                             0x0001385c   Section       92  scalbn.o(x$fpl$scalbn)
-    $v0                                      0x0001385c   Number         0  scalbn.o(x$fpl$scalbn)
-    x$fpl$trapveneer                         0x000138b8   Section       48  trapv.o(x$fpl$trapveneer)
-    $v0                                      0x000138b8   Number         0  trapv.o(x$fpl$trapveneer)
-    .constdata                               0x000138e8   Section       13  osal_sample.o(.constdata)
-    x$fpl$usenofp                            0x000138e8   Section        0  usenofp.o(x$fpl$usenofp)
-    .constdata                               0x000138f5   Section     3284  cot_mt_oled.o(.constdata)
-    .constdata                               0x000145cc   Section      128  rfparamconfig.o(.constdata)
-    .constdata                               0x0001464c   Section      128  am_hal_mcuctrl.o(.constdata)
-    .constdata                               0x000146d0   Section      708  cot_mac.o(.constdata)
-    RNG_CALIB_0400                           0x000146d0   Data          12  cot_mac.o(.constdata)
-    RNG_CALIB_0800                           0x000146dc   Data          12  cot_mac.o(.constdata)
-    RNG_CALIB_1600                           0x000146e8   Data          12  cot_mac.o(.constdata)
-    RNG_FGRAD_0400                           0x000146f8   Data          48  cot_mac.o(.constdata)
-    RNG_FGRAD_0800                           0x00014728   Data          48  cot_mac.o(.constdata)
-    RNG_FGRAD_1600                           0x00014758   Data          48  cot_mac.o(.constdata)
-    tPublicKey2048A_t                        0x00014788   Data         516  cot_mac.o(.constdata)
-    .constdata                               0x00014994   Section      184  cot_ranging.o(.constdata)
-    Channels                                 0x00014994   Data         160  cot_ranging.o(.constdata)
-    .constdata                               0x00014a4c   Section      320  sha256.o(.constdata)
-    K                                        0x00014a4c   Data         256  sha256.o(.constdata)
-    padding                                  0x00014b4c   Data          64  sha256.o(.constdata)
-    .constdata                               0x00014b8c   Section        8  sx1280-hal.o(.constdata)
-    <Data1>                                  0x00014b8c   Data           8  sx1280-hal.o(.constdata)
-    .constdata                               0x00014b94   Section      312  cot_mac_protocol_parse.o(.constdata)
-    g_aUnitBackoffPeriod_us_in_lr24          0x00014b94   Data         128  cot_mac_protocol_parse.o(.constdata)
-    g_aUnitBackoffPeriod_us_in_fsk           0x00014c14   Data          32  cot_mac_protocol_parse.o(.constdata)
-    g_aUnitBackoffPeriod_us_in_flrc          0x00014c34   Data          24  cot_mac_protocol_parse.o(.constdata)
-    g_ack_us_in_lr24                         0x00014c4c   Data         128  cot_mac_protocol_parse.o(.constdata)
-    .constdata                               0x00014ccc   Section       40  _printf_hex_int.o(.constdata)
-    uc_hextab                                0x00014ccc   Data          20  _printf_hex_int.o(.constdata)
-    lc_hextab                                0x00014ce0   Data          20  _printf_hex_int.o(.constdata)
-    .constdata                               0x00014cf8   Section      136  pow.o(.constdata)
-    bp                                       0x00014cf8   Data          16  pow.o(.constdata)
-    dp_h                                     0x00014d08   Data          16  pow.o(.constdata)
-    dp_l                                     0x00014d18   Data          16  pow.o(.constdata)
-    L                                        0x00014d28   Data          48  pow.o(.constdata)
-    P                                        0x00014d58   Data          40  pow.o(.constdata)
-    .constdata                               0x00014d80   Section        8  qnan.o(.constdata)
-    .constdata                               0x00014d88   Section      148  bigflt0.o(.constdata)
-    tenpwrs_x                                0x00014d88   Data          60  bigflt0.o(.constdata)
-    tenpwrs_i                                0x00014dc4   Data          64  bigflt0.o(.constdata)
-    .constdata__ZTV5Radio                    0x00014e1c   Section       60  sx1280-hal.o(.constdata__ZTV5Radio)
-    .constdata__ZTV6SX1280                   0x00014e58   Section       76  sx1280.o(.constdata__ZTV6SX1280)
-    .constdata__ZTV9SX1280Hal                0x00014ea4   Section       84  sx1280-hal.o(.constdata__ZTV9SX1280Hal)
-    .conststring                             0x00014ef8   Section       65  base64.o(.conststring)
-    .conststring                             0x00014f3c   Section        5  uart.o(.conststring)
-    .conststring                             0x00014f44   Section        6  flash.o(.conststring)
-    .conststring                             0x00014f4c   Section        5  spi.o(.conststring)
-    .conststring                             0x00014f54   Section       69  gpio.o(.conststring)
-    .conststring                             0x00014f9c   Section        5  rtc.o(.conststring)
-    .conststring                             0x00014fa4   Section        5  adc.o(.conststring)
-    .conststring                             0x00014fac   Section        5  iic.o(.conststring)
-    .conststring                             0x00014fb4   Section        5  spi1.o(.conststring)
-    .conststring                             0x00014fbc   Section      113  am_hal_iom.o(.conststring)
-    locale$$data                             0x00015050   Section       28  lc_numeric_c.o(locale$$data)
-    __lcnum_c_name                           0x00015054   Data           2  lc_numeric_c.o(locale$$data)
-    __lcnum_c_start                          0x0001505c   Data           0  lc_numeric_c.o(locale$$data)
-    __lcnum_c_point                          0x00015068   Data           0  lc_numeric_c.o(locale$$data)
-    __lcnum_c_thousands                      0x0001506a   Data           0  lc_numeric_c.o(locale$$data)
-    __lcnum_c_grouping                       0x0001506b   Data           0  lc_numeric_c.o(locale$$data)
-    .init_array                              0x0001506c   Section        4  cot_mac.o(.init_array)
-    __lcnum_c_end                            0x0001506c   Data           0  lc_numeric_c.o(locale$$data)
-    .init_array                              0x00015070   Section        0  init_aeabi.o(.init_array)
+    i.simple_strlen                          0x00012938   Section        0  am_util_stdio.o(i.simple_strlen)
+    simple_strlen                            0x00012939   Thumb Code    24  am_util_stdio.o(i.simple_strlen)
+    i.spi1_disable                           0x00012950   Section        0  spi1.o(i.spi1_disable)
+    spi1_disable                             0x00012951   Thumb Code    12  spi1.o(i.spi1_disable)
+    i.spi1_init_module                       0x00012960   Section        0  spi1.o(i.spi1_init_module)
+    i.spi_disable                            0x0001296c   Section        0  spi.o(i.spi_disable)
+    spi_disable                              0x0001296d   Thumb Code   128  spi.o(i.spi_disable)
+    i.spi_init_module                        0x000129f8   Section        0  spi.o(i.spi_init_module)
+    i.sqrt                                   0x00012a02   Section        0  sqrt.o(i.sqrt)
+    i.timerA0_start                          0x00012a70   Section        0  hal_timers.o(i.timerA0_start)
+    i.timerA0_stop                           0x00012abc   Section        0  hal_timers.o(i.timerA0_stop)
+    i.uart_disable                           0x00012adc   Section        0  uart.o(i.uart_disable)
+    uart_disable                             0x00012add   Thumb Code   110  uart.o(i.uart_disable)
+    i.uart_enable                            0x00012b50   Section        0  uart.o(i.uart_enable)
+    uart_enable                              0x00012b51   Thumb Code   140  uart.o(i.uart_enable)
+    i.uart_init_module                       0x00012be4   Section        0  uart.o(i.uart_init_module)
+    i.uint64_to_hexstr                       0x00012bee   Section        0  am_util_stdio.o(i.uint64_to_hexstr)
+    uint64_to_hexstr                         0x00012bef   Thumb Code   138  am_util_stdio.o(i.uint64_to_hexstr)
+    i.uint64_to_str                          0x00012c78   Section        0  am_util_stdio.o(i.uint64_to_str)
+    uint64_to_str                            0x00012c79   Thumb Code   112  am_util_stdio.o(i.uint64_to_str)
+    i.wait_ms                                0x00012ce8   Section        0  hal_timers.o(i.wait_ms)
+    i.wait_us                                0x00012cfa   Section        0  hal_timers.o(i.wait_us)
+    i.write                                  0x00012d0c   Section        0  vfs.o(i.write)
+    locale$$code                             0x00012d40   Section       44  lc_numeric_c.o(locale$$code)
+    x$fpl$basic                              0x00012d6c   Section       24  basic.o(x$fpl$basic)
+    $v0                                      0x00012d6c   Number         0  basic.o(x$fpl$basic)
+    x$fpl$d2f                                0x00012d84   Section       98  d2f.o(x$fpl$d2f)
+    $v0                                      0x00012d84   Number         0  d2f.o(x$fpl$d2f)
+    x$fpl$dadd                               0x00012de8   Section      336  daddsub_clz.o(x$fpl$dadd)
+    $v0                                      0x00012de8   Number         0  daddsub_clz.o(x$fpl$dadd)
+    _dadd1                                   0x00012df9   Thumb Code     0  daddsub_clz.o(x$fpl$dadd)
+    x$fpl$dcheck1                            0x00012f38   Section       16  dcheck1.o(x$fpl$dcheck1)
+    $v0                                      0x00012f38   Number         0  dcheck1.o(x$fpl$dcheck1)
+    x$fpl$dcmpinf                            0x00012f48   Section       24  dcmpi.o(x$fpl$dcmpinf)
+    $v0                                      0x00012f48   Number         0  dcmpi.o(x$fpl$dcmpinf)
+    x$fpl$ddiv                               0x00012f60   Section      688  ddiv.o(x$fpl$ddiv)
+    $v0                                      0x00012f60   Number         0  ddiv.o(x$fpl$ddiv)
+    ddiv_entry                               0x00012f67   Thumb Code     0  ddiv.o(x$fpl$ddiv)
+    x$fpl$dfix                               0x00013210   Section       94  dfix.o(x$fpl$dfix)
+    $v0                                      0x00013210   Number         0  dfix.o(x$fpl$dfix)
+    x$fpl$dfixu                              0x00013270   Section       90  dfixu.o(x$fpl$dfixu)
+    $v0                                      0x00013270   Number         0  dfixu.o(x$fpl$dfixu)
+    x$fpl$dflt                               0x000132ca   Section       46  dflt_clz.o(x$fpl$dflt)
+    $v0                                      0x000132ca   Number         0  dflt_clz.o(x$fpl$dflt)
+    x$fpl$dfltu                              0x000132f8   Section       38  dflt_clz.o(x$fpl$dfltu)
+    $v0                                      0x000132f8   Number         0  dflt_clz.o(x$fpl$dfltu)
+    x$fpl$dleqf                              0x00013320   Section      120  dleqf.o(x$fpl$dleqf)
+    $v0                                      0x00013320   Number         0  dleqf.o(x$fpl$dleqf)
+    x$fpl$dmul                               0x00013398   Section      340  dmul.o(x$fpl$dmul)
+    $v0                                      0x00013398   Number         0  dmul.o(x$fpl$dmul)
+    x$fpl$dnaninf                            0x000134ec   Section      156  dnaninf.o(x$fpl$dnaninf)
+    $v0                                      0x000134ec   Number         0  dnaninf.o(x$fpl$dnaninf)
+    x$fpl$dretinf                            0x00013588   Section       12  dretinf.o(x$fpl$dretinf)
+    $v0                                      0x00013588   Number         0  dretinf.o(x$fpl$dretinf)
+    x$fpl$drleqf                             0x00013594   Section      108  drleqf.o(x$fpl$drleqf)
+    $v0                                      0x00013594   Number         0  drleqf.o(x$fpl$drleqf)
+    x$fpl$drsb                               0x00013600   Section       22  daddsub_clz.o(x$fpl$drsb)
+    $v0                                      0x00013600   Number         0  daddsub_clz.o(x$fpl$drsb)
+    x$fpl$dsqrt                              0x00013618   Section      408  dsqrt_umaal.o(x$fpl$dsqrt)
+    $v0                                      0x00013618   Number         0  dsqrt_umaal.o(x$fpl$dsqrt)
+    x$fpl$dsub                               0x000137b0   Section      468  daddsub_clz.o(x$fpl$dsub)
+    $v0                                      0x000137b0   Number         0  daddsub_clz.o(x$fpl$dsub)
+    _dsub1                                   0x000137c1   Thumb Code     0  daddsub_clz.o(x$fpl$dsub)
+    x$fpl$fpinit                             0x00013984   Section       10  fpinit.o(x$fpl$fpinit)
+    $v0                                      0x00013984   Number         0  fpinit.o(x$fpl$fpinit)
+    x$fpl$fretinf                            0x0001398e   Section       10  fretinf.o(x$fpl$fretinf)
+    $v0                                      0x0001398e   Number         0  fretinf.o(x$fpl$fretinf)
+    x$fpl$printf1                            0x00013998   Section        4  printf1.o(x$fpl$printf1)
+    $v0                                      0x00013998   Number         0  printf1.o(x$fpl$printf1)
+    x$fpl$retnan                             0x0001399c   Section      100  retnan.o(x$fpl$retnan)
+    $v0                                      0x0001399c   Number         0  retnan.o(x$fpl$retnan)
+    x$fpl$scalbn                             0x00013a00   Section       92  scalbn.o(x$fpl$scalbn)
+    $v0                                      0x00013a00   Number         0  scalbn.o(x$fpl$scalbn)
+    x$fpl$trapveneer                         0x00013a5c   Section       48  trapv.o(x$fpl$trapveneer)
+    $v0                                      0x00013a5c   Number         0  trapv.o(x$fpl$trapveneer)
+    .constdata                               0x00013a8c   Section       13  osal_sample.o(.constdata)
+    x$fpl$usenofp                            0x00013a8c   Section        0  usenofp.o(x$fpl$usenofp)
+    .constdata                               0x00013a99   Section     3284  cot_mt_oled.o(.constdata)
+    .constdata                               0x00014770   Section      128  rfparamconfig.o(.constdata)
+    .constdata                               0x000147f0   Section      128  am_hal_mcuctrl.o(.constdata)
+    .constdata                               0x00014870   Section      708  cot_mac.o(.constdata)
+    RNG_CALIB_0400                           0x00014870   Data          12  cot_mac.o(.constdata)
+    RNG_CALIB_0800                           0x0001487c   Data          12  cot_mac.o(.constdata)
+    RNG_CALIB_1600                           0x00014888   Data          12  cot_mac.o(.constdata)
+    RNG_FGRAD_0400                           0x00014898   Data          48  cot_mac.o(.constdata)
+    RNG_FGRAD_0800                           0x000148c8   Data          48  cot_mac.o(.constdata)
+    RNG_FGRAD_1600                           0x000148f8   Data          48  cot_mac.o(.constdata)
+    tPublicKey2048A_t                        0x00014928   Data         516  cot_mac.o(.constdata)
+    .constdata                               0x00014b34   Section      184  cot_ranging.o(.constdata)
+    Channels                                 0x00014b34   Data         160  cot_ranging.o(.constdata)
+    .constdata                               0x00014bec   Section      320  sha256.o(.constdata)
+    K                                        0x00014bec   Data         256  sha256.o(.constdata)
+    padding                                  0x00014cec   Data          64  sha256.o(.constdata)
+    .constdata                               0x00014d2c   Section        8  sx1280-hal.o(.constdata)
+    <Data1>                                  0x00014d2c   Data           8  sx1280-hal.o(.constdata)
+    .constdata                               0x00014d34   Section      312  cot_mac_protocol_parse.o(.constdata)
+    g_aUnitBackoffPeriod_us_in_lr24          0x00014d34   Data         128  cot_mac_protocol_parse.o(.constdata)
+    g_aUnitBackoffPeriod_us_in_fsk           0x00014db4   Data          32  cot_mac_protocol_parse.o(.constdata)
+    g_aUnitBackoffPeriod_us_in_flrc          0x00014dd4   Data          24  cot_mac_protocol_parse.o(.constdata)
+    g_ack_us_in_lr24                         0x00014dec   Data         128  cot_mac_protocol_parse.o(.constdata)
+    .constdata                               0x00014e6c   Section       40  _printf_hex_int.o(.constdata)
+    uc_hextab                                0x00014e6c   Data          20  _printf_hex_int.o(.constdata)
+    lc_hextab                                0x00014e80   Data          20  _printf_hex_int.o(.constdata)
+    .constdata                               0x00014e98   Section      136  pow.o(.constdata)
+    bp                                       0x00014e98   Data          16  pow.o(.constdata)
+    dp_h                                     0x00014ea8   Data          16  pow.o(.constdata)
+    dp_l                                     0x00014eb8   Data          16  pow.o(.constdata)
+    L                                        0x00014ec8   Data          48  pow.o(.constdata)
+    P                                        0x00014ef8   Data          40  pow.o(.constdata)
+    .constdata                               0x00014f20   Section        8  qnan.o(.constdata)
+    .constdata                               0x00014f28   Section      148  bigflt0.o(.constdata)
+    tenpwrs_x                                0x00014f28   Data          60  bigflt0.o(.constdata)
+    tenpwrs_i                                0x00014f64   Data          64  bigflt0.o(.constdata)
+    .constdata__ZTV5Radio                    0x00014fbc   Section       60  sx1280-hal.o(.constdata__ZTV5Radio)
+    .constdata__ZTV6SX1280                   0x00014ff8   Section       76  sx1280.o(.constdata__ZTV6SX1280)
+    .constdata__ZTV9SX1280Hal                0x00015044   Section       84  sx1280-hal.o(.constdata__ZTV9SX1280Hal)
+    .conststring                             0x00015098   Section       65  base64.o(.conststring)
+    .conststring                             0x000150dc   Section        5  uart.o(.conststring)
+    .conststring                             0x000150e4   Section        6  flash.o(.conststring)
+    .conststring                             0x000150ec   Section        5  spi.o(.conststring)
+    .conststring                             0x000150f4   Section       69  gpio.o(.conststring)
+    .conststring                             0x0001513c   Section        5  rtc.o(.conststring)
+    .conststring                             0x00015144   Section        5  adc.o(.conststring)
+    .conststring                             0x0001514c   Section        5  iic.o(.conststring)
+    .conststring                             0x00015154   Section        5  spi1.o(.conststring)
+    .conststring                             0x0001515c   Section      113  am_hal_iom.o(.conststring)
+    locale$$data                             0x000151f0   Section       28  lc_numeric_c.o(locale$$data)
+    __lcnum_c_name                           0x000151f4   Data           2  lc_numeric_c.o(locale$$data)
+    __lcnum_c_start                          0x000151fc   Data           0  lc_numeric_c.o(locale$$data)
+    __lcnum_c_point                          0x00015208   Data           0  lc_numeric_c.o(locale$$data)
+    __lcnum_c_thousands                      0x0001520a   Data           0  lc_numeric_c.o(locale$$data)
+    __lcnum_c_grouping                       0x0001520b   Data           0  lc_numeric_c.o(locale$$data)
+    .init_array                              0x0001520c   Section        4  cot_mac.o(.init_array)
+    __lcnum_c_end                            0x0001520c   Data           0  lc_numeric_c.o(locale$$data)
+    .init_array                              0x00015210   Section        0  init_aeabi.o(.init_array)
     .data                                    0x10000000   Section        4  osal_sample.o(.data)
     .data                                    0x10000004   Section       29  sample_multiple_anchor_app.o(.data)
     s_sample_app_id                          0x10000004   Data           1  sample_multiple_anchor_app.o(.data)
@@ -4977,78 +4978,78 @@ Image Symbol Table
     rsa_public                               0x00011e09   Thumb Code   252  rsa.o(i.rsa_public)
     rtc_init_module                          0x00012021   Thumb Code    10  rtc.o(i.rtc_init_module)
     sample_app_init                          0x0001202d   Thumb Code    20  sample_multiple_anchor_app.o(i.sample_app_init)
-    sample_app_processevent                  0x00012045   Thumb Code  1700  sample_multiple_anchor_app.o(i.sample_app_processevent)
-    spi1_init_module                         0x000127bd   Thumb Code    10  spi1.o(i.spi1_init_module)
-    spi_init_module                          0x00012855   Thumb Code    10  spi.o(i.spi_init_module)
-    sqrt                                     0x0001285f   Thumb Code   110  sqrt.o(i.sqrt)
-    timerA0_start                            0x000128cd   Thumb Code    70  hal_timers.o(i.timerA0_start)
-    timerA0_stop                             0x00012919   Thumb Code    32  hal_timers.o(i.timerA0_stop)
-    uart_init_module                         0x00012a41   Thumb Code    10  uart.o(i.uart_init_module)
-    wait_ms                                  0x00012b45   Thumb Code    18  hal_timers.o(i.wait_ms)
-    wait_us                                  0x00012b57   Thumb Code    18  hal_timers.o(i.wait_us)
-    write                                    0x00012b69   Thumb Code    52  vfs.o(i.write)
-    _get_lc_numeric                          0x00012b9d   Thumb Code    44  lc_numeric_c.o(locale$$code)
-    __aeabi_dneg                             0x00012bc9   Thumb Code     0  basic.o(x$fpl$basic)
-    _dneg                                    0x00012bc9   Thumb Code     6  basic.o(x$fpl$basic)
-    __aeabi_fneg                             0x00012bcf   Thumb Code     0  basic.o(x$fpl$basic)
-    _fneg                                    0x00012bcf   Thumb Code     6  basic.o(x$fpl$basic)
-    _dabs                                    0x00012bd5   Thumb Code     6  basic.o(x$fpl$basic)
-    _fabs                                    0x00012bdb   Thumb Code     6  basic.o(x$fpl$basic)
-    __aeabi_d2f                              0x00012be1   Thumb Code     0  d2f.o(x$fpl$d2f)
-    _d2f                                     0x00012be1   Thumb Code    98  d2f.o(x$fpl$d2f)
-    __aeabi_dadd                             0x00012c45   Thumb Code     0  daddsub_clz.o(x$fpl$dadd)
-    _dadd                                    0x00012c45   Thumb Code   332  daddsub_clz.o(x$fpl$dadd)
-    __fpl_dcheck_NaN1                        0x00012d95   Thumb Code    10  dcheck1.o(x$fpl$dcheck1)
-    __fpl_dcmp_Inf                           0x00012da5   Thumb Code    24  dcmpi.o(x$fpl$dcmpinf)
-    __aeabi_ddiv                             0x00012dbd   Thumb Code     0  ddiv.o(x$fpl$ddiv)
-    _ddiv                                    0x00012dbd   Thumb Code   552  ddiv.o(x$fpl$ddiv)
-    __aeabi_d2iz                             0x0001306d   Thumb Code     0  dfix.o(x$fpl$dfix)
-    _dfix                                    0x0001306d   Thumb Code    94  dfix.o(x$fpl$dfix)
-    __aeabi_d2uiz                            0x000130cd   Thumb Code     0  dfixu.o(x$fpl$dfixu)
-    _dfixu                                   0x000130cd   Thumb Code    90  dfixu.o(x$fpl$dfixu)
-    __aeabi_i2d                              0x00013127   Thumb Code     0  dflt_clz.o(x$fpl$dflt)
-    _dflt                                    0x00013127   Thumb Code    46  dflt_clz.o(x$fpl$dflt)
-    __aeabi_ui2d                             0x00013155   Thumb Code     0  dflt_clz.o(x$fpl$dfltu)
-    _dfltu                                   0x00013155   Thumb Code    38  dflt_clz.o(x$fpl$dfltu)
-    __aeabi_cdcmple                          0x0001317d   Thumb Code     0  dleqf.o(x$fpl$dleqf)
-    _dcmple                                  0x0001317d   Thumb Code   120  dleqf.o(x$fpl$dleqf)
-    __fpl_dcmple_InfNaN                      0x000131df   Thumb Code     0  dleqf.o(x$fpl$dleqf)
-    __aeabi_dmul                             0x000131f5   Thumb Code     0  dmul.o(x$fpl$dmul)
-    _dmul                                    0x000131f5   Thumb Code   332  dmul.o(x$fpl$dmul)
-    __fpl_dnaninf                            0x00013349   Thumb Code   156  dnaninf.o(x$fpl$dnaninf)
-    __fpl_dretinf                            0x000133e5   Thumb Code    12  dretinf.o(x$fpl$dretinf)
-    __aeabi_cdrcmple                         0x000133f1   Thumb Code     0  drleqf.o(x$fpl$drleqf)
-    _drcmple                                 0x000133f1   Thumb Code   108  drleqf.o(x$fpl$drleqf)
-    __aeabi_drsub                            0x0001345d   Thumb Code     0  daddsub_clz.o(x$fpl$drsb)
-    _drsb                                    0x0001345d   Thumb Code    22  daddsub_clz.o(x$fpl$drsb)
-    _dsqrt                                   0x00013475   Thumb Code   404  dsqrt_umaal.o(x$fpl$dsqrt)
-    __aeabi_dsub                             0x0001360d   Thumb Code     0  daddsub_clz.o(x$fpl$dsub)
-    _dsub                                    0x0001360d   Thumb Code   464  daddsub_clz.o(x$fpl$dsub)
-    _fp_init                                 0x000137e1   Thumb Code    10  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x000137e9   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x000137e9   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fpl_fretinf                            0x000137eb   Thumb Code    10  fretinf.o(x$fpl$fretinf)
-    _printf_fp_dec                           0x000137f5   Thumb Code     4  printf1.o(x$fpl$printf1)
-    __fpl_return_NaN                         0x000137f9   Thumb Code   100  retnan.o(x$fpl$retnan)
-    __ARM_scalbn                             0x0001385d   Thumb Code    92  scalbn.o(x$fpl$scalbn)
-    __fpl_cmpreturn                          0x000138b9   Thumb Code    48  trapv.o(x$fpl$trapveneer)
-    __I$use$fp                               0x000138e8   Number         0  usenofp.o(x$fpl$usenofp)
-    tasksArr                                 0x000138e8   Data          12  osal_sample.o(.constdata)
-    tasksCnt                                 0x000138f4   Data           1  osal_sample.o(.constdata)
-    ASC_F6x8                                 0x000138f5   Data         612  cot_mt_oled.o(.constdata)
-    ASC_F8x16                                0x00013b59   Data        1520  cot_mt_oled.o(.constdata)
-    CN_F16_16                                0x00014149   Data         128  cot_mt_oled.o(.constdata)
-    PictureCode_COT                          0x000141c9   Data        1024  cot_mt_oled.o(.constdata)
-    am_hal_mcuctrl_flash_size                0x0001464c   Data          64  am_hal_mcuctrl.o(.constdata)
-    am_hal_mcuctrl_sram_size                 0x0001468c   Data          64  am_hal_mcuctrl.o(.constdata)
-    __mathlib_zero                           0x00014d80   Data           8  qnan.o(.constdata)
-    vtable for Radio                         0x00014e1c   Data          60  sx1280-hal.o(.constdata__ZTV5Radio)
-    vtable for SX1280                        0x00014e58   Data          76  sx1280.o(.constdata__ZTV6SX1280)
-    vtable for SX1280Hal                     0x00014ea4   Data          84  sx1280-hal.o(.constdata__ZTV9SX1280Hal)
-    Region$$Table$$Base                      0x00015030   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00015050   Number         0  anon$$obj.o(Region$$Table)
-    SHT$$INIT_ARRAY$$Base                    0x0001506c   Number         0  cot_mac.o(.init_array)
-    SHT$$INIT_ARRAY$$Limit                   0x00015070   Number         0  init_aeabi.o(.init_array)
+    sample_app_processevent                  0x00012045   Thumb Code  2032  sample_multiple_anchor_app.o(i.sample_app_processevent)
+    spi1_init_module                         0x00012961   Thumb Code    10  spi1.o(i.spi1_init_module)
+    spi_init_module                          0x000129f9   Thumb Code    10  spi.o(i.spi_init_module)
+    sqrt                                     0x00012a03   Thumb Code   110  sqrt.o(i.sqrt)
+    timerA0_start                            0x00012a71   Thumb Code    70  hal_timers.o(i.timerA0_start)
+    timerA0_stop                             0x00012abd   Thumb Code    32  hal_timers.o(i.timerA0_stop)
+    uart_init_module                         0x00012be5   Thumb Code    10  uart.o(i.uart_init_module)
+    wait_ms                                  0x00012ce9   Thumb Code    18  hal_timers.o(i.wait_ms)
+    wait_us                                  0x00012cfb   Thumb Code    18  hal_timers.o(i.wait_us)
+    write                                    0x00012d0d   Thumb Code    52  vfs.o(i.write)
+    _get_lc_numeric                          0x00012d41   Thumb Code    44  lc_numeric_c.o(locale$$code)
+    __aeabi_dneg                             0x00012d6d   Thumb Code     0  basic.o(x$fpl$basic)
+    _dneg                                    0x00012d6d   Thumb Code     6  basic.o(x$fpl$basic)
+    __aeabi_fneg                             0x00012d73   Thumb Code     0  basic.o(x$fpl$basic)
+    _fneg                                    0x00012d73   Thumb Code     6  basic.o(x$fpl$basic)
+    _dabs                                    0x00012d79   Thumb Code     6  basic.o(x$fpl$basic)
+    _fabs                                    0x00012d7f   Thumb Code     6  basic.o(x$fpl$basic)
+    __aeabi_d2f                              0x00012d85   Thumb Code     0  d2f.o(x$fpl$d2f)
+    _d2f                                     0x00012d85   Thumb Code    98  d2f.o(x$fpl$d2f)
+    __aeabi_dadd                             0x00012de9   Thumb Code     0  daddsub_clz.o(x$fpl$dadd)
+    _dadd                                    0x00012de9   Thumb Code   332  daddsub_clz.o(x$fpl$dadd)
+    __fpl_dcheck_NaN1                        0x00012f39   Thumb Code    10  dcheck1.o(x$fpl$dcheck1)
+    __fpl_dcmp_Inf                           0x00012f49   Thumb Code    24  dcmpi.o(x$fpl$dcmpinf)
+    __aeabi_ddiv                             0x00012f61   Thumb Code     0  ddiv.o(x$fpl$ddiv)
+    _ddiv                                    0x00012f61   Thumb Code   552  ddiv.o(x$fpl$ddiv)
+    __aeabi_d2iz                             0x00013211   Thumb Code     0  dfix.o(x$fpl$dfix)
+    _dfix                                    0x00013211   Thumb Code    94  dfix.o(x$fpl$dfix)
+    __aeabi_d2uiz                            0x00013271   Thumb Code     0  dfixu.o(x$fpl$dfixu)
+    _dfixu                                   0x00013271   Thumb Code    90  dfixu.o(x$fpl$dfixu)
+    __aeabi_i2d                              0x000132cb   Thumb Code     0  dflt_clz.o(x$fpl$dflt)
+    _dflt                                    0x000132cb   Thumb Code    46  dflt_clz.o(x$fpl$dflt)
+    __aeabi_ui2d                             0x000132f9   Thumb Code     0  dflt_clz.o(x$fpl$dfltu)
+    _dfltu                                   0x000132f9   Thumb Code    38  dflt_clz.o(x$fpl$dfltu)
+    __aeabi_cdcmple                          0x00013321   Thumb Code     0  dleqf.o(x$fpl$dleqf)
+    _dcmple                                  0x00013321   Thumb Code   120  dleqf.o(x$fpl$dleqf)
+    __fpl_dcmple_InfNaN                      0x00013383   Thumb Code     0  dleqf.o(x$fpl$dleqf)
+    __aeabi_dmul                             0x00013399   Thumb Code     0  dmul.o(x$fpl$dmul)
+    _dmul                                    0x00013399   Thumb Code   332  dmul.o(x$fpl$dmul)
+    __fpl_dnaninf                            0x000134ed   Thumb Code   156  dnaninf.o(x$fpl$dnaninf)
+    __fpl_dretinf                            0x00013589   Thumb Code    12  dretinf.o(x$fpl$dretinf)
+    __aeabi_cdrcmple                         0x00013595   Thumb Code     0  drleqf.o(x$fpl$drleqf)
+    _drcmple                                 0x00013595   Thumb Code   108  drleqf.o(x$fpl$drleqf)
+    __aeabi_drsub                            0x00013601   Thumb Code     0  daddsub_clz.o(x$fpl$drsb)
+    _drsb                                    0x00013601   Thumb Code    22  daddsub_clz.o(x$fpl$drsb)
+    _dsqrt                                   0x00013619   Thumb Code   404  dsqrt_umaal.o(x$fpl$dsqrt)
+    __aeabi_dsub                             0x000137b1   Thumb Code     0  daddsub_clz.o(x$fpl$dsub)
+    _dsub                                    0x000137b1   Thumb Code   464  daddsub_clz.o(x$fpl$dsub)
+    _fp_init                                 0x00013985   Thumb Code    10  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x0001398d   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x0001398d   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fpl_fretinf                            0x0001398f   Thumb Code    10  fretinf.o(x$fpl$fretinf)
+    _printf_fp_dec                           0x00013999   Thumb Code     4  printf1.o(x$fpl$printf1)
+    __fpl_return_NaN                         0x0001399d   Thumb Code   100  retnan.o(x$fpl$retnan)
+    __ARM_scalbn                             0x00013a01   Thumb Code    92  scalbn.o(x$fpl$scalbn)
+    __fpl_cmpreturn                          0x00013a5d   Thumb Code    48  trapv.o(x$fpl$trapveneer)
+    __I$use$fp                               0x00013a8c   Number         0  usenofp.o(x$fpl$usenofp)
+    tasksArr                                 0x00013a8c   Data          12  osal_sample.o(.constdata)
+    tasksCnt                                 0x00013a98   Data           1  osal_sample.o(.constdata)
+    ASC_F6x8                                 0x00013a99   Data         612  cot_mt_oled.o(.constdata)
+    ASC_F8x16                                0x00013cfd   Data        1520  cot_mt_oled.o(.constdata)
+    CN_F16_16                                0x000142ed   Data         128  cot_mt_oled.o(.constdata)
+    PictureCode_COT                          0x0001436d   Data        1024  cot_mt_oled.o(.constdata)
+    am_hal_mcuctrl_flash_size                0x000147f0   Data          64  am_hal_mcuctrl.o(.constdata)
+    am_hal_mcuctrl_sram_size                 0x00014830   Data          64  am_hal_mcuctrl.o(.constdata)
+    __mathlib_zero                           0x00014f20   Data           8  qnan.o(.constdata)
+    vtable for Radio                         0x00014fbc   Data          60  sx1280-hal.o(.constdata__ZTV5Radio)
+    vtable for SX1280                        0x00014ff8   Data          76  sx1280.o(.constdata__ZTV6SX1280)
+    vtable for SX1280Hal                     0x00015044   Data          84  sx1280-hal.o(.constdata__ZTV9SX1280Hal)
+    Region$$Table$$Base                      0x000151d0   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x000151f0   Number         0  anon$$obj.o(Region$$Table)
+    SHT$$INIT_ARRAY$$Base                    0x0001520c   Number         0  cot_mac.o(.init_array)
+    SHT$$INIT_ARRAY$$Limit                   0x00015210   Number         0  init_aeabi.o(.init_array)
     tasksEvents                              0x10000000   Data           4  osal_sample.o(.data)
     read_distance                            0x1000000b   Data           2  sample_multiple_anchor_app.o(.data)
     read_rssi                                0x1000000d   Data           1  sample_multiple_anchor_app.o(.data)
@@ -5167,9 +5168,9 @@ Memory Map of the image
 
   Image Entry point : 0x00000099
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00015558, Max: 0xffffffff, ABSOLUTE, COMPRESSED[0x000152b0])
+  Load Region LR_1 (Base: 0x00000000, Size: 0x000156f8, Max: 0xffffffff, ABSOLUTE, COMPRESSED[0x00015454])
 
-    Execution Region FLASH (Base: 0x00000000, Size: 0x00015070, Max: 0x00080000, ABSOLUTE)
+    Execution Region FLASH (Base: 0x00000000, Size: 0x00015210, Max: 0x00080000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -5817,100 +5818,99 @@ Memory Map of the image
     0x00012020   0x0000000a   Code   RO         3132    i.rtc_init_module   rtc.o
     0x0001202a   0x00000002   PAD
     0x0001202c   0x00000018   Code   RO          396    i.sample_app_init   sample_multiple_anchor_app.o
-    0x00012044   0x00000750   Code   RO          397    i.sample_app_processevent  sample_multiple_anchor_app.o
-    0x00012794   0x00000018   Code   RO         2218    i.simple_strlen     am_util_stdio.o
-    0x000127ac   0x00000010   Code   RO         3396    i.spi1_disable      spi1.o
-    0x000127bc   0x0000000a   Code   RO         3397    i.spi1_init_module  spi1.o
-    0x000127c6   0x00000002   PAD
-    0x000127c8   0x0000008c   Code   RO         2749    i.spi_disable       spi.o
-    0x00012854   0x0000000a   Code   RO         2750    i.spi_init_module   spi.o
-    0x0001285e   0x0000006e   Code   RO         7405    i.sqrt              m_wm.l(sqrt.o)
-    0x000128cc   0x0000004c   Code   RO         2507    i.timerA0_start     hal_timers.o
-    0x00012918   0x00000020   Code   RO         2508    i.timerA0_stop      hal_timers.o
-    0x00012938   0x00000074   Code   RO         2565    i.uart_disable      uart.o
-    0x000129ac   0x00000094   Code   RO         2566    i.uart_enable       uart.o
-    0x00012a40   0x0000000a   Code   RO         2567    i.uart_init_module  uart.o
-    0x00012a4a   0x0000008a   Code   RO         2219    i.uint64_to_hexstr  am_util_stdio.o
-    0x00012ad4   0x00000070   Code   RO         2220    i.uint64_to_str     am_util_stdio.o
-    0x00012b44   0x00000012   Code   RO         2509    i.wait_ms           hal_timers.o
-    0x00012b56   0x00000012   Code   RO         2510    i.wait_us           hal_timers.o
-    0x00012b68   0x00000034   Code   RO         5940    i.write             COT-M_SDK_VFS_LIB.lib(vfs.o)
-    0x00012b9c   0x0000002c   Code   RO         7706    locale$$code        c_w.l(lc_numeric_c.o)
-    0x00012bc8   0x00000018   Code   RO         7581    x$fpl$basic         fz_wm.l(basic.o)
-    0x00012be0   0x00000062   Code   RO         7317    x$fpl$d2f           fz_wm.l(d2f.o)
-    0x00012c42   0x00000002   PAD
-    0x00012c44   0x00000150   Code   RO         7319    x$fpl$dadd          fz_wm.l(daddsub_clz.o)
-    0x00012d94   0x00000010   Code   RO         7729    x$fpl$dcheck1       fz_wm.l(dcheck1.o)
-    0x00012da4   0x00000018   Code   RO         7583    x$fpl$dcmpinf       fz_wm.l(dcmpi.o)
-    0x00012dbc   0x000002b0   Code   RO         7326    x$fpl$ddiv          fz_wm.l(ddiv.o)
-    0x0001306c   0x0000005e   Code   RO         7329    x$fpl$dfix          fz_wm.l(dfix.o)
-    0x000130ca   0x00000002   PAD
-    0x000130cc   0x0000005a   Code   RO         7333    x$fpl$dfixu         fz_wm.l(dfixu.o)
-    0x00013126   0x0000002e   Code   RO         7338    x$fpl$dflt          fz_wm.l(dflt_clz.o)
-    0x00013154   0x00000026   Code   RO         7337    x$fpl$dfltu         fz_wm.l(dflt_clz.o)
-    0x0001317a   0x00000002   PAD
-    0x0001317c   0x00000078   Code   RO         7343    x$fpl$dleqf         fz_wm.l(dleqf.o)
-    0x000131f4   0x00000154   Code   RO         7345    x$fpl$dmul          fz_wm.l(dmul.o)
-    0x00013348   0x0000009c   Code   RO         7585    x$fpl$dnaninf       fz_wm.l(dnaninf.o)
-    0x000133e4   0x0000000c   Code   RO         7587    x$fpl$dretinf       fz_wm.l(dretinf.o)
-    0x000133f0   0x0000006c   Code   RO         7347    x$fpl$drleqf        fz_wm.l(drleqf.o)
-    0x0001345c   0x00000016   Code   RO         7320    x$fpl$drsb          fz_wm.l(daddsub_clz.o)
-    0x00013472   0x00000002   PAD
-    0x00013474   0x00000198   Code   RO         7589    x$fpl$dsqrt         fz_wm.l(dsqrt_umaal.o)
-    0x0001360c   0x000001d4   Code   RO         7321    x$fpl$dsub          fz_wm.l(daddsub_clz.o)
-    0x000137e0   0x0000000a   Code   RO         7731    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x000137ea   0x0000000a   Code   RO         7591    x$fpl$fretinf       fz_wm.l(fretinf.o)
-    0x000137f4   0x00000004   Code   RO         7349    x$fpl$printf1       fz_wm.l(printf1.o)
-    0x000137f8   0x00000064   Code   RO         7786    x$fpl$retnan        fz_wm.l(retnan.o)
-    0x0001385c   0x0000005c   Code   RO         7593    x$fpl$scalbn        fz_wm.l(scalbn.o)
-    0x000138b8   0x00000030   Code   RO         7807    x$fpl$trapveneer    fz_wm.l(trapv.o)
-    0x000138e8   0x00000000   Code   RO         7595    x$fpl$usenofp       fz_wm.l(usenofp.o)
-    0x000138e8   0x0000000d   Data   RO           15    .constdata          osal_sample.o
-    0x000138f5   0x00000cd4   Data   RO          906    .constdata          cot_mt_oled.o
-    0x000145c9   0x00000003   PAD
-    0x000145cc   0x00000080   Data   RO         1254    .constdata          rfparamconfig.o
-    0x0001464c   0x00000080   Data   RO         4688    .constdata          am_hal_mcuctrl.o
-    0x000146cc   0x00000004   PAD
-    0x000146d0   0x000002c4   Data   RO         5521    .constdata          COT-M_SDK_RF_LIB.lib(cot_mac.o)
-    0x00014994   0x000000b8   Data   RO         5836    .constdata          COT-M_SDK_RANGING_LIB.lib(cot_ranging.o)
-    0x00014a4c   0x00000140   Data   RO         6061    .constdata          algorithm lib.lib(sha256.o)
-    0x00014b8c   0x00000008   Data   RO         6597    .constdata          COT-M_SDK_RF_LIB.lib(sx1280-hal.o)
-    0x00014b94   0x00000138   Data   RO         6779    .constdata          COT-M_SDK_RF_LIB.lib(cot_mac_protocol_parse.o)
-    0x00014ccc   0x00000028   Data   RO         7128    .constdata          c_w.l(_printf_hex_int.o)
-    0x00014cf4   0x00000004   PAD
-    0x00014cf8   0x00000088   Data   RO         7392    .constdata          m_wm.l(pow.o)
-    0x00014d80   0x00000008   Data   RO         7614    .constdata          m_wm.l(qnan.o)
-    0x00014d88   0x00000094   Data   RO         7681    .constdata          c_w.l(bigflt0.o)
-    0x00014e1c   0x0000003c   Data   RO         6703    .constdata__ZTV5Radio  COT-M_SDK_RF_LIB.lib(sx1280-hal.o)
-    0x00014e58   0x0000004c   Data   RO         6513    .constdata__ZTV6SX1280  COT-M_SDK_RF_LIB.lib(sx1280.o)
-    0x00014ea4   0x00000054   Data   RO         6695    .constdata__ZTV9SX1280Hal  COT-M_SDK_RF_LIB.lib(sx1280-hal.o)
-    0x00014ef8   0x00000041   Data   RO          652    .conststring        base64.o
-    0x00014f39   0x00000003   PAD
-    0x00014f3c   0x00000005   Data   RO         2569    .conststring        uart.o
-    0x00014f41   0x00000003   PAD
-    0x00014f44   0x00000006   Data   RO         2700    .conststring        flash.o
-    0x00014f4a   0x00000002   PAD
-    0x00014f4c   0x00000005   Data   RO         2751    .conststring        spi.o
-    0x00014f51   0x00000003   PAD
-    0x00014f54   0x00000045   Data   RO         2865    .conststring        gpio.o
-    0x00014f99   0x00000003   PAD
-    0x00014f9c   0x00000005   Data   RO         3133    .conststring        rtc.o
-    0x00014fa1   0x00000003   PAD
-    0x00014fa4   0x00000005   Data   RO         3211    .conststring        adc.o
-    0x00014fa9   0x00000003   PAD
-    0x00014fac   0x00000005   Data   RO         3323    .conststring        iic.o
-    0x00014fb1   0x00000003   PAD
-    0x00014fb4   0x00000005   Data   RO         3398    .conststring        spi1.o
-    0x00014fb9   0x00000003   PAD
-    0x00014fbc   0x00000071   Data   RO         4152    .conststring        am_hal_iom.o
-    0x0001502d   0x00000003   PAD
-    0x00015030   0x00000020   Data   RO         7835    Region$$Table       anon$$obj.o
-    0x00015050   0x0000001c   Data   RO         7705    locale$$data        c_w.l(lc_numeric_c.o)
-    0x0001506c   0x00000004   Data   RO         5523    .init_array         COT-M_SDK_RF_LIB.lib(cot_mac.o)
-    0x00015070   0x00000000   Data   RO         7197    .init_array         c_w.l(init_aeabi.o)
+    0x00012044   0x000008f4   Code   RO          397    i.sample_app_processevent  sample_multiple_anchor_app.o
+    0x00012938   0x00000018   Code   RO         2218    i.simple_strlen     am_util_stdio.o
+    0x00012950   0x00000010   Code   RO         3396    i.spi1_disable      spi1.o
+    0x00012960   0x0000000a   Code   RO         3397    i.spi1_init_module  spi1.o
+    0x0001296a   0x00000002   PAD
+    0x0001296c   0x0000008c   Code   RO         2749    i.spi_disable       spi.o
+    0x000129f8   0x0000000a   Code   RO         2750    i.spi_init_module   spi.o
+    0x00012a02   0x0000006e   Code   RO         7405    i.sqrt              m_wm.l(sqrt.o)
+    0x00012a70   0x0000004c   Code   RO         2507    i.timerA0_start     hal_timers.o
+    0x00012abc   0x00000020   Code   RO         2508    i.timerA0_stop      hal_timers.o
+    0x00012adc   0x00000074   Code   RO         2565    i.uart_disable      uart.o
+    0x00012b50   0x00000094   Code   RO         2566    i.uart_enable       uart.o
+    0x00012be4   0x0000000a   Code   RO         2567    i.uart_init_module  uart.o
+    0x00012bee   0x0000008a   Code   RO         2219    i.uint64_to_hexstr  am_util_stdio.o
+    0x00012c78   0x00000070   Code   RO         2220    i.uint64_to_str     am_util_stdio.o
+    0x00012ce8   0x00000012   Code   RO         2509    i.wait_ms           hal_timers.o
+    0x00012cfa   0x00000012   Code   RO         2510    i.wait_us           hal_timers.o
+    0x00012d0c   0x00000034   Code   RO         5940    i.write             COT-M_SDK_VFS_LIB.lib(vfs.o)
+    0x00012d40   0x0000002c   Code   RO         7706    locale$$code        c_w.l(lc_numeric_c.o)
+    0x00012d6c   0x00000018   Code   RO         7581    x$fpl$basic         fz_wm.l(basic.o)
+    0x00012d84   0x00000062   Code   RO         7317    x$fpl$d2f           fz_wm.l(d2f.o)
+    0x00012de6   0x00000002   PAD
+    0x00012de8   0x00000150   Code   RO         7319    x$fpl$dadd          fz_wm.l(daddsub_clz.o)
+    0x00012f38   0x00000010   Code   RO         7729    x$fpl$dcheck1       fz_wm.l(dcheck1.o)
+    0x00012f48   0x00000018   Code   RO         7583    x$fpl$dcmpinf       fz_wm.l(dcmpi.o)
+    0x00012f60   0x000002b0   Code   RO         7326    x$fpl$ddiv          fz_wm.l(ddiv.o)
+    0x00013210   0x0000005e   Code   RO         7329    x$fpl$dfix          fz_wm.l(dfix.o)
+    0x0001326e   0x00000002   PAD
+    0x00013270   0x0000005a   Code   RO         7333    x$fpl$dfixu         fz_wm.l(dfixu.o)
+    0x000132ca   0x0000002e   Code   RO         7338    x$fpl$dflt          fz_wm.l(dflt_clz.o)
+    0x000132f8   0x00000026   Code   RO         7337    x$fpl$dfltu         fz_wm.l(dflt_clz.o)
+    0x0001331e   0x00000002   PAD
+    0x00013320   0x00000078   Code   RO         7343    x$fpl$dleqf         fz_wm.l(dleqf.o)
+    0x00013398   0x00000154   Code   RO         7345    x$fpl$dmul          fz_wm.l(dmul.o)
+    0x000134ec   0x0000009c   Code   RO         7585    x$fpl$dnaninf       fz_wm.l(dnaninf.o)
+    0x00013588   0x0000000c   Code   RO         7587    x$fpl$dretinf       fz_wm.l(dretinf.o)
+    0x00013594   0x0000006c   Code   RO         7347    x$fpl$drleqf        fz_wm.l(drleqf.o)
+    0x00013600   0x00000016   Code   RO         7320    x$fpl$drsb          fz_wm.l(daddsub_clz.o)
+    0x00013616   0x00000002   PAD
+    0x00013618   0x00000198   Code   RO         7589    x$fpl$dsqrt         fz_wm.l(dsqrt_umaal.o)
+    0x000137b0   0x000001d4   Code   RO         7321    x$fpl$dsub          fz_wm.l(daddsub_clz.o)
+    0x00013984   0x0000000a   Code   RO         7731    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x0001398e   0x0000000a   Code   RO         7591    x$fpl$fretinf       fz_wm.l(fretinf.o)
+    0x00013998   0x00000004   Code   RO         7349    x$fpl$printf1       fz_wm.l(printf1.o)
+    0x0001399c   0x00000064   Code   RO         7786    x$fpl$retnan        fz_wm.l(retnan.o)
+    0x00013a00   0x0000005c   Code   RO         7593    x$fpl$scalbn        fz_wm.l(scalbn.o)
+    0x00013a5c   0x00000030   Code   RO         7807    x$fpl$trapveneer    fz_wm.l(trapv.o)
+    0x00013a8c   0x00000000   Code   RO         7595    x$fpl$usenofp       fz_wm.l(usenofp.o)
+    0x00013a8c   0x0000000d   Data   RO           15    .constdata          osal_sample.o
+    0x00013a99   0x00000cd4   Data   RO          906    .constdata          cot_mt_oled.o
+    0x0001476d   0x00000003   PAD
+    0x00014770   0x00000080   Data   RO         1254    .constdata          rfparamconfig.o
+    0x000147f0   0x00000080   Data   RO         4688    .constdata          am_hal_mcuctrl.o
+    0x00014870   0x000002c4   Data   RO         5521    .constdata          COT-M_SDK_RF_LIB.lib(cot_mac.o)
+    0x00014b34   0x000000b8   Data   RO         5836    .constdata          COT-M_SDK_RANGING_LIB.lib(cot_ranging.o)
+    0x00014bec   0x00000140   Data   RO         6061    .constdata          algorithm lib.lib(sha256.o)
+    0x00014d2c   0x00000008   Data   RO         6597    .constdata          COT-M_SDK_RF_LIB.lib(sx1280-hal.o)
+    0x00014d34   0x00000138   Data   RO         6779    .constdata          COT-M_SDK_RF_LIB.lib(cot_mac_protocol_parse.o)
+    0x00014e6c   0x00000028   Data   RO         7128    .constdata          c_w.l(_printf_hex_int.o)
+    0x00014e94   0x00000004   PAD
+    0x00014e98   0x00000088   Data   RO         7392    .constdata          m_wm.l(pow.o)
+    0x00014f20   0x00000008   Data   RO         7614    .constdata          m_wm.l(qnan.o)
+    0x00014f28   0x00000094   Data   RO         7681    .constdata          c_w.l(bigflt0.o)
+    0x00014fbc   0x0000003c   Data   RO         6703    .constdata__ZTV5Radio  COT-M_SDK_RF_LIB.lib(sx1280-hal.o)
+    0x00014ff8   0x0000004c   Data   RO         6513    .constdata__ZTV6SX1280  COT-M_SDK_RF_LIB.lib(sx1280.o)
+    0x00015044   0x00000054   Data   RO         6695    .constdata__ZTV9SX1280Hal  COT-M_SDK_RF_LIB.lib(sx1280-hal.o)
+    0x00015098   0x00000041   Data   RO          652    .conststring        base64.o
+    0x000150d9   0x00000003   PAD
+    0x000150dc   0x00000005   Data   RO         2569    .conststring        uart.o
+    0x000150e1   0x00000003   PAD
+    0x000150e4   0x00000006   Data   RO         2700    .conststring        flash.o
+    0x000150ea   0x00000002   PAD
+    0x000150ec   0x00000005   Data   RO         2751    .conststring        spi.o
+    0x000150f1   0x00000003   PAD
+    0x000150f4   0x00000045   Data   RO         2865    .conststring        gpio.o
+    0x00015139   0x00000003   PAD
+    0x0001513c   0x00000005   Data   RO         3133    .conststring        rtc.o
+    0x00015141   0x00000003   PAD
+    0x00015144   0x00000005   Data   RO         3211    .conststring        adc.o
+    0x00015149   0x00000003   PAD
+    0x0001514c   0x00000005   Data   RO         3323    .conststring        iic.o
+    0x00015151   0x00000003   PAD
+    0x00015154   0x00000005   Data   RO         3398    .conststring        spi1.o
+    0x00015159   0x00000003   PAD
+    0x0001515c   0x00000071   Data   RO         4152    .conststring        am_hal_iom.o
+    0x000151cd   0x00000003   PAD
+    0x000151d0   0x00000020   Data   RO         7835    Region$$Table       anon$$obj.o
+    0x000151f0   0x0000001c   Data   RO         7705    locale$$data        c_w.l(lc_numeric_c.o)
+    0x0001520c   0x00000004   Data   RO         5523    .init_array         COT-M_SDK_RF_LIB.lib(cot_mac.o)
+    0x00015210   0x00000000   Data   RO         7197    .init_array         c_w.l(init_aeabi.o)
 
 
-    Execution Region SRAM (Base: 0x10000000, Size: 0x000046f0, Max: 0x00010000, ABSOLUTE, COMPRESSED[0x00000240])
+    Execution Region SRAM (Base: 0x10000000, Size: 0x000046f0, Max: 0x00010000, ABSOLUTE, COMPRESSED[0x00000244])
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -5976,59 +5976,59 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       904         84          5        100          0       7224   adc.o
-        38          0          0          0          0        592   am_bsp.o
-       292         58          0          0         12       5222   am_hal_adc.o
-       146         40          0          0          0       2560   am_hal_clkgen.o
-       328         52          0          0          0       6456   am_hal_ctimer.o
-         4          0          0          0          0        609   am_hal_debug.o
-        94         16          0         40          0       5251   am_hal_flash.o
-       352        110          0          0        256       4892   am_hal_gpio.o
-       206         20          0          0          0       1945   am_hal_interrupt.o
-      3964       1524        113         20         88      22140   am_hal_iom.o
-       376         40        128          0          0       5347   am_hal_mcuctrl.o
-       102          0          0          0          0       1400   am_hal_queue.o
-       666         14          0          0          0       7388   am_hal_rtc.o
-        64          8          0          0          0        639   am_hal_sysctrl.o
-       106         12          0         12          0       3238   am_hal_systick.o
-       794         96          0          0         40      14677   am_hal_uart.o
-        12          4          0          0          0        563   am_hal_vcomp.o
-        60          6          0          0          0       1270   am_util_delay.o
-      1272        784          0          0          0      27357   am_util_faultisr.o
-         0          0          0          0          0        456   am_util_plot.o
-      2072         36          0          5       1024      12293   am_util_stdio.o
-       532          8         65          4          0       2603   base64.o
-      2288        300          0          9          0      13295   cot_mt_key.o
-      1056         86          0          4         40       8782   cot_mt_led.o
-       736         34       3284          0          0      11657   cot_mt_oled.o
-       950        110          0          3          0      12850   cot_mt_task.o
-       688         54          0          8        288       8958   cot_mt_uart.o
-       466         46          6         48          0       5515   flash.o
-      5034        558         69        432          0      42835   gpio.o
-       158          6          0         16          0       3303   hal_timers.o
-       798         74          5         48          0       8515   iic.o
-        96         14          0          0          0       2435   log.o
-       822         48          0          5          0      11567   osal.o
-       548         74          0         24       4096       6016   osal_memory.o
-       216         10          0          4          0       3872   osal_mutex.o
-       172         24          0          8          0       3328   osal_pwrmgr.o
-        56          4         13          4          0      18408   osal_sample.o
-        56         16          0          0          0       2204   osal_tick.o
-       488         34          0          8          0       6452   osal_time.o
-      2784         32        128          4          0      29383   rfparamconfig.o
-       640         70          5         52          0       8999   rtc.o
-        64          0          0          0          0        599   sample_main.o
-      2576        410          0         29        240      17861   sample_multiple_anchor_app.o
-        56         10          0          0          0        632   sleep.o
-      1150        118          5         76          0       8471   spi.o
-       986        108          5         76          0       8412   spi1.o
-       180        136          0          0       5888       1248   startup_keil.o
-       800         76          5         68       2080      11376   uart.o
+       904         84          5        100          0       6864   adc.o
+        38          0          0          0          0        556   am_bsp.o
+       292         58          0          0         12       4914   am_hal_adc.o
+       146         40          0          0          0       2424   am_hal_clkgen.o
+       328         52          0          0          0       6152   am_hal_ctimer.o
+         4          0          0          0          0        577   am_hal_debug.o
+        94         16          0         40          0       5023   am_hal_flash.o
+       352        110          0          0        256       4624   am_hal_gpio.o
+       206         20          0          0          0       1845   am_hal_interrupt.o
+      3964       1524        113         20         88      21384   am_hal_iom.o
+       376         40        128          0          0       5079   am_hal_mcuctrl.o
+       102          0          0          0          0       1336   am_hal_queue.o
+       666         14          0          0          0       6972   am_hal_rtc.o
+        64          8          0          0          0        607   am_hal_sysctrl.o
+       106         12          0         12          0       3030   am_hal_systick.o
+       794         96          0          0         40      13957   am_hal_uart.o
+        12          4          0          0          0        527   am_hal_vcomp.o
+        60          6          0          0          0       1206   am_util_delay.o
+      1272        784          0          0          0      26985   am_util_faultisr.o
+         0          0          0          0          0        424   am_util_plot.o
+      2072         36          0          5       1024      11773   am_util_stdio.o
+       532          8         65          4          0       2467   base64.o
+      2288        300          0          9          0      12775   cot_mt_key.o
+      1056         86          0          4         40       8490   cot_mt_led.o
+       736         34       3284          0          0      11245   cot_mt_oled.o
+       950        110          0          3          0      12558   cot_mt_task.o
+       688         54          0          8        288       8618   cot_mt_uart.o
+       466         46          6         48          0       5231   flash.o
+      5034        558         69        432          0      40787   gpio.o
+       158          6          0         16          0       3091   hal_timers.o
+       798         74          5         48          0       8031   iic.o
+        96         14          0          0          0       2339   log.o
+       822         48          0          5          0      11019   osal.o
+       548         74          0         24       4096       5776   osal_memory.o
+       216         10          0          4          0       3640   osal_mutex.o
+       172         24          0          8          0       3128   osal_pwrmgr.o
+        56          4         13          4          0      18136   osal_sample.o
+        56         16          0          0          0       2068   osal_tick.o
+       488         34          0          8          0       6108   osal_time.o
+      2784         32        128          4          0      28771   rfparamconfig.o
+       640         70          5         52          0       8495   rtc.o
+        64          0          0          0          0        563   sample_main.o
+      2996        562          0         29        240      17509   sample_multiple_anchor_app.o
+        56         10          0          0          0        596   sleep.o
+      1150        118          5         76          0       8087   spi.o
+       986        108          5         76          0       7984   spi1.o
+       180        136          0          0       5888       1188   startup_keil.o
+       800         76          5         68       2080      10936   uart.o
 
     ----------------------------------------------------------------------
-     36292       5364       3904       1116      14052     391095   Object Totals
+     36712       5516       3900       1116      14052     375895   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        44          0         36          9          0          0   (incl. Padding)
+        44          0         32          9          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -6175,15 +6175,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     80104       7528       6024       1256      16904     594047   Grand Totals
-     80104       7528       6024        576      16904     594047   ELF Image Totals (compressed)
-     80104       7528       6024        576          0          0   ROM Totals
+     80524       7680       6020       1256      16904     578847   Grand Totals
+     80524       7680       6020        580      16904     578847   ELF Image Totals (compressed)
+     80524       7680       6020        580          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                86128 (  84.11kB)
+    Total RO  Size (Code + RO Data)                86544 (  84.52kB)
     Total RW  Size (RW Data + ZI Data)             18160 (  17.73kB)
-    Total ROM Size (Code + RO Data + RW Data)      86704 (  84.67kB)
+    Total ROM Size (Code + RO Data + RW Data)      87124 (  85.08kB)
 
 ==============================================================================
 
