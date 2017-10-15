@@ -26,8 +26,18 @@ Project File Date:  10/10/2017
 
 <h2>Output:</h2>
 Build target 'COT-M_SDK'
+compiling sample_multiple_anchor_app.cpp...
+src\app\sample_multiple_anchor_app.cpp(168): warning:  #177-D: variable "s_soft_version" was declared but never referenced
+  static  uint8_t s_soft_version[4]={2,0,0,0};
+src\app\sample_multiple_anchor_app.cpp(170): warning:  #177-D: variable "s_hard_ware_version" was declared but never referenced
+  static  uint8_t s_hard_ware_version[2]={1,0};
+src\app\sample_multiple_anchor_app.cpp(185): warning:  #550-D: variable "g_start_rng_flag_slave" was set but never used
+  static bool g_start_rng_flag_slave = false;
+src\app\sample_multiple_anchor_app.cpp: 3 warnings, 0 errors
+linking...
+Program Size: Code=80616 RO-data=6028 RW-data=1272 ZI-data=17128  
 After Build - User command #1: fromelf --bin --output bin\COT-M_SDK.bin obj\COT-M_SDK.axf
-".\obj\COT-M_SDK.axf" - 0 Error(s), 0 Warning(s).
+".\obj\COT-M_SDK.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   F:\Lora资料\sx1280\COT-MOV淘宝板子资料\COT-M-V3\COT-M_SDK_Release\RTE
